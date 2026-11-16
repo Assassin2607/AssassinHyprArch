@@ -31,7 +31,6 @@ Singleton {
     readonly property int indexVersion: 4
 
     readonly property var sources: [
-        { repo: "pctrade/end4-pCpresets", branch: "main", prefix: "pctrade--", sanitize: true, rootWallpapers: false, authorsBranch: "gallery-data" },
         { repo: "Blapples/wallpapers", branch: "main", prefix: "", sanitize: false, rootWallpapers: true }
     ]
 
@@ -136,7 +135,7 @@ Singleton {
         listProc.source = src;
         listProc.command = ["curl", "-sSL", "-w", "\nHTTP_STATUS:%{http_code}",
             "-H", "Accept: application/vnd.github+json",
-            "-H", "User-Agent: end4-pC-quickshell",
+            "-H", "User-Agent: AssassinHyprArch",
             `https://api.github.com/repos/${src.repo}/git/trees/${src.branch}?recursive=1`];
         listProc.running = true;
     }

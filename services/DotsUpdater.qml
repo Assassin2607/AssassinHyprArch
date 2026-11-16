@@ -21,19 +21,19 @@ Singleton {
             set -e
             DIR="$HOME/.config/quickshell"
 
-            rm -rf "$DIR/end4-pC-tmp"
-            git clone https://github.com/pctrade/end4-pC.git "$DIR/end4-pC-tmp"
+            rm -rf "$DIR/AssassinHyprArch-tmp"
+            git clone https://github.com/Assassin2607/AssassinHyprArch.git "$DIR/AssassinHyprArch-tmp"
 
-            rm -rf "$DIR/end4-pC-old"
-            [ -d "$DIR/end4-pC" ] && mv "$DIR/end4-pC" "$DIR/end4-pC-old"
-            mv "$DIR/end4-pC-tmp" "$DIR/end4-pC"
+            rm -rf "$DIR/AssassinHyprArch-old"
+            [ -d "$DIR/AssassinHyprArch" ] && mv "$DIR/AssassinHyprArch" "$DIR/AssassinHyprArch-old"
+            mv "$DIR/AssassinHyprArch-tmp" "$DIR/AssassinHyprArch"
 
             killall qs 2>/dev/null || true
             sleep 0.5
-            setsid qs -c end4-pC >/tmp/qs.log 2>&1 < /dev/null &
+            setsid qs -c AssassinHyprArch >/tmp/qs.log 2>&1 < /dev/null &
             disown
 
-            rm -rf "$DIR/end4-pC-old"
+            rm -rf "$DIR/AssassinHyprArch-old"
         `
 
         Quickshell.execDetached(["kitty", "--hold", "bash", "-c", updateScript])
