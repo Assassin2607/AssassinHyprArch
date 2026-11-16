@@ -11,7 +11,7 @@ Rectangle {
     readonly property alias status: avatarImage.status
     readonly property string picturePath: Config.options.profile.avatarPath !== "" && Config.options.profile.avatarPicture !== ""
         ? Config.options.profile.avatarPicture
-        : `${FileUtils.trimFileProtocol(Directories.home)}/.face`
+        : ""
 
     implicitWidth: 48
     implicitHeight: 48
@@ -22,7 +22,7 @@ Rectangle {
         id: avatarImage
         anchors.fill: parent
         anchors.margins: root.border.width
-        source: `file://${root.picturePath}`
+        source: root.picturePath !== "" ? `file://${root.picturePath}` : ""
         sourceSize.width: width * 2
         sourceSize.height: height * 2
         fillMode: Image.PreserveAspectCrop

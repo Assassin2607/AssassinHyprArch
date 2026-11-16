@@ -46,11 +46,6 @@ ShellRoot {
         Hyprsunset.load()
         FirstRunExperience.load()
         ConflictKiller.load()
-        Cliphist.refresh()
-        Wallpapers.load()
-        Football.load()
-        Updates.load()
-        LyricsService.restartLyrics()
     }
     
     PanelFamilyLoader {

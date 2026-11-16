@@ -69,9 +69,7 @@ Scope {
     }
 
     function tryFingerUnlock() {
-        if (root.fingerprintsConfigured) {
-            fingerPam.start();
-        }
+        return
     }
 
     function stopFingerPam() {
@@ -82,7 +80,7 @@ Scope {
 
     Process {
         id: fingerprintCheckProc
-        running: true
+        running: false
         command: ["bash", "-c", "fprintd-list $(whoami)"]
         stdout: StdioCollector {
             id: fingerprintOutputCollector

@@ -7,6 +7,7 @@ import QtQuick.Layouts
 
 BarWidgetSwitcher {
     id: root
+    property bool calendarPinned: false
     property color contentColor: Appearance.colors.colOnLayer1
     property bool contentColorOverridden: false
     property bool borderless: Config.options.bar.borderless
@@ -200,9 +201,11 @@ BarWidgetSwitcher {
         id: mouseArea
         anchors.fill: parent
         hoverEnabled: !Config.options.bar.tooltips.clickToShow
+        onClicked: root.calendarPinned = !root.calendarPinned
         ClockWidgetPopup {
             hoverTarget: mouseArea
             today: root.today
+            forceShow: root.calendarPinned
         }
     }
 }

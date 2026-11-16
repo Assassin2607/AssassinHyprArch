@@ -15,14 +15,8 @@ Item {
     property bool active: true
     signal pageRequested(string key)
 
-    readonly property var liveMatches: Football.matches.filter(match => Football.isLiveish(match))
-    readonly property var nextMatch: {
-        const now = Date.now();
-        const upcoming = Football.matches
-            .filter(match => match.state === "pre" && new Date(match.date).getTime() > now)
-            .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
-        return upcoming.length > 0 ? upcoming[0] : null;
-    }
+    readonly property var liveMatches: []
+    readonly property var nextMatch: null
     readonly property var player: MprisController.activePlayer
 
     function styleFor(key) {
