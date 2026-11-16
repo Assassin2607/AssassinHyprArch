@@ -7,7 +7,7 @@ import qs.services
 Singleton {
     id: root
 
-    readonly property string pagesDir: "modules/ii/settings/pages/"
+    readonly property string pagesDir: "modules/assassin/settings/pages/"
 
     readonly property var pages: {
         const list = [

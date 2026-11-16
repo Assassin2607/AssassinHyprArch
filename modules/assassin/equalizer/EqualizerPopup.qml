@@ -24,7 +24,7 @@ import Quickshell.Services.Mpris
 // this popup isn't tied to any one player/track - it just reflects whatever
 // MprisController.activePlayer currently is, same as the bar's media widget.
 //
-// Uses the same Loader-active pattern as modules/ii/mediaControls/MediaControls.qml:
+// Uses the same Loader-active pattern as modules/assassin/mediaControls/MediaControls.qml:
 // the PanelWindow is created/destroyed by the Loader in step with
 // GlobalStates.equalizerOpen, so the popup's entrance/exit is whatever native
 // map/unmap animation the compositor (Hyprland) already plays for every other
